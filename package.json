@@ -1,0 +1,23 @@
+{
+  "name": "mern_pro_shopp",
+  "version": "1.0.0",
+  "description": "MERN Shopping Cart App",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WalkerSyed581/mern_proshop.git"
+  },
+  "author": "Sajeel Hassan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WalkerSyed581/mern_proshop/issues"
+  },
+  "homepage": "https://github.com/WalkerSyed581/mern_proshop#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
