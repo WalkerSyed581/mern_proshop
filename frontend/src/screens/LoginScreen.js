@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import { Link,useParams,useNavigate } from 'react-router-dom'
+import { Link,useSearchParams,useNavigate } from 'react-router-dom'
 import { Form, Button, Row, Col} from 'react-bootstrap'
 import { useDispatch,useSelector } from 'react-redux'
 import Message from '../components/Message'
@@ -16,11 +16,11 @@ const LoginScreen = () => {
 	const userLogin = useSelector(state => state.userLogin)
 	const { loading,error,userInfo } = userLogin
 	
-	let { redirect } = useParams();
-	redirect = redirect ? redirect : '/'
-	
-	let navigate = useNavigate()
+	let [searchParams, setSearchParams] = useSearchParams();
+	let redirect =  searchParams.get('redirect')
+	redirect = redirect ? '/' + redirect : '/'
 
+	let navigate = useNavigate()
 	useEffect(() => {
 		if(userInfo){
 			return navigate(redirect)
