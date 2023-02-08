@@ -5,8 +5,10 @@ import { useEffect } from "react";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
 import { listProducts } from "../actions/productActions";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Paginate from "../components/Paginate";
+import ProductCarousel from "../components/ProductCarousel";
+import { Helmet } from "react-helmet";
 
 const HomeScreen = () => {
   const dispatch = useDispatch();
@@ -22,6 +24,20 @@ const HomeScreen = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Welcome To ProShop | Home</title>
+        <meta
+          name="description"
+          content="We sell the best products for cheap"
+        />
+      </Helmet>
+      {!keyword ? (
+        <ProductCarousel />
+      ) : (
+        <Link to="/" className="btn btn-light">
+          Go Back
+        </Link>
+      )}
       <h1>Latest Products</h1>
       {loading ? (
         <Loader />
